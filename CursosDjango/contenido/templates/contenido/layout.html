@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %}</title>
+    {% load static %}
+    <link href="{% static "contenido/css/styles.css" %}" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static "contenido/js/script.js" %}"></script>
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+    </header>
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="{% url "Principal" %}" class="nav_logo" style="text-decoration: none;">
+                    <i class='bx bx-home-alt-2 nav_logo-icon'></i>
+                    <span class="nav_logo-name">Inicio</span>
+                </a>
+                <div class="nav_list">
+                    <a href="{% url "Cursos" %}" class="nav_link active" style="text-decoration: none;">
+                        <i class='bx bx-library nav_icon'></i>
+                        <span class="nav_name">Cursos</span>
+                    </a>
+                    <a href="{% url "Contacto" %}" class="nav_link" style="text-decoration: none;">
+                        <i class='bx bxs-contact nav_icon'></i>
+                        <span class="nav_name">Contacto</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!--Container Main start-->
+    <div class="height-100 bg-light" style="padding-top: 62px;">
+        <!--CONTENIDO-->
+        <h4>{% block tituloSeccion %}{% endblock %}</h4>
+        <div class="breadcrumb-line rounded">
+            <ul class="breadcrumb">
+                <a href="{% url "Principal" %}" style="text-decoration: none;">
+                    {% if request.path == '/' %}
+                        Principal
+                    {% else %}
+                        Principal{{request.path}}
+                    {% endif %}
+                </a>
+            </ul>
+        </div>
+        {% block contenido %}
+        <!--Template Tag-->
+        <!--block sirve para indicar que colocaremos un bloque de contenido 
+        a través de nuestra variable content-->
+        {% endblock %}
+    </div>
+    <!--Container Main end-->  
+</body>
+</html>
