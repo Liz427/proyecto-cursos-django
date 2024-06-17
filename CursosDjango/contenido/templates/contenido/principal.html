@@ -1,0 +1,18 @@
+{% extends "contenido/layout.html" %} 
+{% block titulo %} Inicio{% endblock%}
+{% block tituloSeccion %}Inicio{% endblock %}
+{% block contenido %}
+
+{% load static %}
+<div class="row">
+    <div class="col">
+        <p>
+            El objetivo de este portal es mostrar los cursos que se impartirán, durante el cuatrimestre Mayo - Agosto 2024. En la especialidad de Desarrollo y Gestión de Software. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </div>
+    <div class="col">
+        <img src="{% static "contenido/images/cursos.jpg" %}" alt="Django" width="600" height="250">
+    </div>
+  </div>
+{% endblock %}

@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.principal, name='Principal'), #Ruta para la página principal del sitio.
     path('cursos/', views.cursos, name='Cursos'), #Ruta para la página de Cursos
     path('contacto/', views.contacto, name='Contacto'), #Ruta para la página que contiende el form de contacto.
+    path('ejemplo2/', views.ejemplo2, name='Ejemplo'),
 ]
